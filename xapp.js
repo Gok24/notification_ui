@@ -36,6 +36,8 @@ var respond_buttons = document.querySelectorAll(".r")
 
 respond_buttons.forEach(function(r){
     r.addEventListener('click',function(){
+        rr = r.dataset.id
+        alert("respond event for "+rr)
         console.log("respond event is triggered")
     })
 })
