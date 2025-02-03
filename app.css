@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Noto Sans;
+    background: #161618;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content{
+    margin: 10px;
+    position: relative;
+    padding: 15px;
+    color: #dddddd;
+    background: #1C1C1E;
+    border: 0.5px solid #252527;
+    box-shadow: 1px 1px 30px #171719;
+    max-width: 80%;
+    border-radius: 20px;
+    user-select: none;
+    /* animation: dcs cubic-bezier(0, 1.07, 1, 1) 300ms 1; */
+}
+
+@keyframes dcs {
+    from{
+        scale: 0.5;
+    }
+    to{
+        scale: 1;
+    }
+}
+.title{
+    padding: 10px;
+}
+.title p{
+    font-size: 18px;
+    font-weight: 600;
+}
+.switches{
+    margin: 10px;
+    padding: 8px 4px;
+    border-radius: 3px;
+    background: #161618;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #6c6c73;
+    box-shadow: 0px 1px 4px rgba(4, 4, 4, 0.963);
+    cursor: pointer;
+}
+.switch{
+    content: '';
+    position: absolute;
+    left: 3px;
+    background: #353539;
+    height: 28px;
+    width: 33%;
+    border-radius: 7px;
+    z-index: 1;
+    border-top: 1px solid #48484c;
+    transition: all 300ms;
+}
+
+.tab:hover{
+    color: #99999E;
+}
+.tab{
+    padding: 0px 36px;
+    z-index: 2;
+}
+.switch.move-right-once{
+    left: 33%;
+}
+.switch.move-right-twice{
+    left: 66%;
+}
+.closer{
+    position: absolute;
+    right: 20px;
+    color: #5d5d65;
+    cursor: pointer;
+}
+.segment_divider{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.a ,.b{
+    padding: 5px;
+}
+.segment_divider .a p{
+    color: #6c6c73;
+    font-size: 12px;
+}
+.segment_divider .a p span{
+    padding: 1px 5px;
+    margin: 0 4px;
+    background: #000;
+    font-size: 11px;
+    color: #eeeeee;
+    background: linear-gradient(180deg,#33333a,#2a2a30);
+    border-radius: 3px;
+}
+.segment_divider .b{
+    font-size: 13px;
+}
+/* item_element
+        major
+            blinker
+            profile
+        detail
+            mainline - p > span
+            subline - p
+        actions
+*/
+
+.item_element{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 15px 10px;
+    background: linear-gradient(180deg,#222225,#242426);
+    box-shadow: 0px 2px 5px #1A1A1D;
+    border-radius: 12px;
+    border: .5px solid #343439;
+    transition: all 200ms;
+}
+.item_element:hover{
+    background: linear-gradient(180deg,#232327,#242426);
+    scale: 1.2;
+}
+.major{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.major .blinker{
+    font-size: 9px;
+    color: #4086ff;
+    text-shadow: 1px 1px 4px #03396c;
+}
+.major .profile img{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+.mainline{
+    font-size: 13px;
+}
+.mainline p{
+    font-weight: 600;
+}
+.mainline p span{
+    font-weight: 400;
+    font-size: 12px;
+    color: #A8A8A8;
+}
+.subline{
+    font-size: 10px;
+    color: #606068;
+    font-weight: 500;
+    padding: 3px 0;
+}
+.actions{
+    display: flex;
+    gap: 7px;
+    margin-left: 70px;
+    padding: 5px 0;
+}
+.actions button{
+    font-size: 12px;
+    border: none;
+    outline: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 400;
+    font-family: Noto Sans;
+    box-shadow: 2px 2px 3px #1a1a1c94;
+    cursor :pointer;
+    transition: all 100ms;
+}
+.actions .i{
+    background: #353539;
+    color: #A2A1A7;
+    border-top: 1px solid #434347;
+}
+.actions .i:hover{
+    background: #3e3e42;
+}
+.actions .i:active{
+    scale: 150%;
+}
+.actions .r{
+    background: linear-gradient(180deg,#4F4EFD,#3239EC);
+    color: #FFFFFF;
+    border-top: 1px solid #6C69FE;
+}
+
+.actions .r:hover{
+    background: linear-gradient(180deg,#5b5bff,#4a50ff);
+}
+.actions .r:active{
+    scale: 150%;
+}
+
+
+
+.closer{
+    z-index: 999;
+}
+.invokeCloseAnimation{
+    animation: closeani 100ms ease-in-out;
+}
+@keyframes closeani {
+    from{
+        scale: 1;
+    }
+    to{
+        scale: 0.5;
+    }
+} 
+
+@media only screen and (max-width: 360px) {
+    .switches{
+        width: 90%;
+        gap: 15px;
+        justify-content: space-evenly;
+    }
+    .tab{
+        padding: 0px 15px;
+    }
+  }
